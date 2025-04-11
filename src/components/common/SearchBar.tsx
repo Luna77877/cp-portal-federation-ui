@@ -1,4 +1,4 @@
-import { Input, InputGroup, Flex, CloseButton } from "@chakra-ui/react";
+import { Input, InputGroup, IconButton, CloseButton } from "@chakra-ui/react";
 import { LuSearch } from "react-icons/lu";
 import { useRef, useState } from "react";
 
@@ -19,13 +19,18 @@ export default function SearchBar() {
 
   return (
     <InputGroup
-      startElement={<LuSearch />}
+      startElement={
+        <IconButton aria-label="Search database" variant="ghost" size="xl">
+          <LuSearch />
+        </IconButton>
+      }
       endElement={endElement}
       width="450px"
     >
       <Input
         ref={inputRef}
-        placeholder="Search Clusters"
+        size="xl"
+        placeholder=" Search Clusters"
         value={value}
         onChange={(e) => {
           setValue(e.currentTarget.value);
