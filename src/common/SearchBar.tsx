@@ -6,25 +6,21 @@ export default function SearchBar() {
   const [value, setValue] = useState("");
   const inputRef = useRef<HTMLInputElement | null>(null);
 
-  const endElement = value ? (
-    <CloseButton
-      size="xs"
-      onClick={() => {
-        setValue("");
-        inputRef.current?.focus();
-      }}
-      me="-2"
-    />
-  ) : undefined;
-
   return (
     <InputGroup
-      startElement={
-        <IconButton aria-label="Search database" variant="ghost" size="xl">
-          <LuSearch />
-        </IconButton>
+      startElement={<LuSearch size="30px" />}
+      endElement={
+        value.length > 0 ? (
+          <CloseButton
+            size="xs"
+            onClick={() => {
+              setValue("");
+              inputRef.current?.focus();
+            }}
+            me="-2"
+          />
+        ) : undefined
       }
-      endElement={endElement}
       width="450px"
     >
       <Input

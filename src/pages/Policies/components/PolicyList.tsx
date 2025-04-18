@@ -1,55 +1,36 @@
 import {
   Flex,
-  Status,
-  Table,
-  Text,
   Button,
   CloseButton,
   Drawer,
   Portal,
   Dialog,
 } from "@chakra-ui/react";
+import { Table } from "@/common/Table";
 import Editor, { DiffEditor, useMonaco, loader } from "@monaco-editor/react";
-import { useRef } from "react";
 
 export default function PolicyList() {
   return (
-    <Table.Root size="sm" variant="outline" className="table-root">
+    <Table.Root>
       <Table.Header>
         <Table.Row>
-          <Table.ColumnHeader className="table-column-header">
-            Namespace
-          </Table.ColumnHeader>
-          <Table.ColumnHeader className="table-column-header">
-            Name
-          </Table.ColumnHeader>
-          <Table.ColumnHeader className="table-column-header">
-            Conflict Resolution
-          </Table.ColumnHeader>
-          <Table.ColumnHeader className="table-column-header">
-            Affected Clusters
-          </Table.ColumnHeader>
-          <Table.ColumnHeader className="table-column-header">
-            Related Resources
-          </Table.ColumnHeader>
-          <Table.ColumnHeader className="table-column-header">
-            Operation
-          </Table.ColumnHeader>
+          <Table.ColumnHeader>Namespace</Table.ColumnHeader>
+          <Table.ColumnHeader>Name</Table.ColumnHeader>
+          <Table.ColumnHeader>Conflict Resolution</Table.ColumnHeader>
+          <Table.ColumnHeader>Affected Clusters</Table.ColumnHeader>
+          <Table.ColumnHeader>Related Resources</Table.ColumnHeader>
+          <Table.ColumnHeader>Operation</Table.ColumnHeader>
         </Table.Row>
       </Table.Header>
       <Table.Body>
         {items.map((item) => (
           <Table.Row key={item.id}>
-            <Table.Cell className="table-cell">{item.namespace}</Table.Cell>
-            <Table.Cell className="table-cell">{item.name}</Table.Cell>
-            <Table.Cell className="table-cell">{item.resoulution}</Table.Cell>
-            <Table.Cell className="table-cell">
-              {item.affectedclusters}
-            </Table.Cell>
-            <Table.Cell className="table-cell">
-              {item.relatedresources}
-            </Table.Cell>
-            <Table.Cell className="table-cell">
+            <Table.Cell>{item.namespace}</Table.Cell>
+            <Table.Cell>{item.name}</Table.Cell>
+            <Table.Cell>{item.resoulution}</Table.Cell>
+            <Table.Cell>{item.affectedclusters}</Table.Cell>
+            <Table.Cell>{item.relatedresources}</Table.Cell>
+            <Table.Cell>
               <Flex justify="space-evenly">
                 <Drawer.Root size="xl">
                   <Drawer.Trigger asChild>

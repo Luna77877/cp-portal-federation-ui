@@ -7,6 +7,7 @@ import {
   Input,
   Flex,
 } from "@chakra-ui/react";
+import { FaPlus } from "react-icons/fa";
 import { useState } from "react";
 
 export default function ClusterJoin() {
@@ -21,8 +22,8 @@ export default function ClusterJoin() {
   return (
     <Dialog.Root scrollBehavior="inside" size="lg">
       <Dialog.Trigger asChild>
-        <Button size="xl" colorPalette="blue">
-          + Join
+        <Button size="lg" colorPalette="blue" fontSize="xl">
+          <FaPlus /> Join
         </Button>
       </Dialog.Trigger>
       <Portal>

@@ -1,13 +1,12 @@
-import useApi from "../../hooks/usdApi";
-import SearchBar from "components/common/SearchBar";
-import LevelSelect from "components/federation/policies/LevelSelect";
-import Namespace from "components/federation/policies/Namespace";
-import PolicyAdd from "components/federation/policies/PolicyAdd";
-import PolicyList from "components/federation/policies/PolicyList";
-import Pages from "components/common/Pages";
+import SearchBar from "common/SearchBar";
+import LevelSelect from "pages/Policies/components/LevelSelect";
+import Namespace from "pages/Policies/components/Namespace";
+import PolicyAdd from "pages/Policies/components/PolicyAdd";
+import PolicyList from "pages/Policies/components/PolicyList";
+import Pagination from "common/Pagination";
 import { FEDERATION_API_BASE_URL } from "../../config/config";
 import { Flex, Button } from "@chakra-ui/react";
-import { Toaster, toaster } from "components/ui/toaster";
+import { toaster } from "common/ui/toaster";
 
 export default function Policies() {
   return (
@@ -27,7 +26,7 @@ export default function Policies() {
         </Flex>
       </Flex>
       <PolicyList />
-      <Pages />
+      <Pagination />
       <Button
         variant="outline"
         size="xs"
@@ -41,7 +40,6 @@ export default function Policies() {
       >
         Show Toast
       </Button>
-      <Toaster />
     </>
   );
 }

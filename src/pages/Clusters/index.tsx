@@ -1,9 +1,9 @@
-import SearchBar from "components/common/SearchBar";
-import ClusterJoin from "components/federation/clusters/ClusterJoin";
-import ClusterList from "components/federation/clusters/ClusterList";
-import Pages from "components/common/Pages";
+import SearchBar from "common/SearchBar";
+import ClusterJoin from "pages/Clusters/components/ClusterJoin";
+import ClusterList from "pages/Clusters/components/ClusterList";
+import Pagination from "common/Pagination";
 import { Flex, Button } from "@chakra-ui/react";
-import { Toaster, toaster } from "components/ui/toaster";
+import { toaster } from "common/ui/toaster";
 
 export default function Clusters() {
   return (
@@ -13,7 +13,7 @@ export default function Clusters() {
         <ClusterJoin />
       </Flex>
       <ClusterList />
-      <Pages />
+      <Pagination />
       <Button
         variant="outline"
         size="xs"
@@ -27,7 +27,6 @@ export default function Clusters() {
       >
         Show Toast
       </Button>
-      <Toaster />
     </>
   );
 }

@@ -15,7 +15,7 @@ export default function Namespace() {
         <Portal>
           <Select.Positioner>
             <Select.Content>
-              <Select.Item item="all" key="all">
+              <Select.Item item="all">
                 All
                 <Select.ItemIndicator />
               </Select.Item>

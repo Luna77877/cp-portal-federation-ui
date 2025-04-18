@@ -76,3 +76,11 @@
   padding-top: 9px;
   padding-bottom: 50px;
 }
+
+.basic-font {
+  color: #47494d;
+  font-weight: 300;
+  font-family: "Apple SD Gothic Neo", "Noto Sans KR", "맑은 고딕",
+    "Font Awesome 5 Free", monospace;
+  font-style: normal;
+}

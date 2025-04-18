@@ -1,24 +1,25 @@
-import { Text } from "@chakra-ui/react";
-import { Card, Stack, Flex, Status, HStack, Progress } from "@chakra-ui/react";
+import { Text } from "@/common/Text";
+import { Card } from "@/common/Card";
+import { Stack, Flex, Status, HStack, Progress } from "@chakra-ui/react";
 
 export default function HostClusterInfo() {
   return (
     <>
-      <Text textStyle="2xl" className="component-title">
-        Host Cluster Info
-      </Text>
-      <Card.Root size="lg" className="large-card-root">
+      <Text type="title">Host Cluster Info</Text>
+      <Card.Root type="wide">
         <Card.Header>
           <Card.Title>
             <Flex gap="5">
               host-cluster
               <Flex gap="2">
-                <Status.Root colorPalette="green">
+                <Status.Root
+                  colorPalette="green"
+                  fontWeight="500"
+                  color="#47494d"
+                >
                   <Status.Indicator />
-                </Status.Root>
-                <Text textStyle="sm" className="status-text">
                   running
-                </Text>
+                </Status.Root>
               </Flex>
             </Flex>
           </Card.Title>

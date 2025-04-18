@@ -1,5 +1,6 @@
-import { Text } from "@chakra-ui/react";
-import { Card, Stack, Flex, Status } from "@chakra-ui/react";
+import { Text } from "@/common/Text";
+import { Card } from "@/common/Card";
+import { Stack, Flex, Status } from "@chakra-ui/react";
 import { BarList, type BarListData, useChart } from "@chakra-ui/charts";
 
 export default function MemberClusterInfo() {
@@ -18,12 +19,10 @@ export default function MemberClusterInfo() {
 
   return (
     <>
-      <Text textStyle="2xl" className="component-title">
-        Member Cluster Info
-      </Text>
+      <Text type="title">Member Cluster Info</Text>
       <Flex gap="3" wrap="wrap" className="flex-card-list">
         {items.map((item) => (
-          <Card.Root variant="elevated" key={item} height="270px" width="345px">
+          <Card.Root type="medium">
             <Card.Header>
               <Card.Title>
                 <Flex gap="5">
@@ -31,10 +30,8 @@ export default function MemberClusterInfo() {
                   <Flex gap="2">
                     <Status.Root colorPalette="green">
                       <Status.Indicator />
-                    </Status.Root>
-                    <Text textStyle="sm" lineHeight="3" fontWeight="500">
                       running
-                    </Text>
+                    </Status.Root>
                   </Flex>
                 </Flex>
               </Card.Title>

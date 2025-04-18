@@ -1,64 +1,47 @@
 import {
   Flex,
   Status,
-  Table,
-  Text,
   Button,
   CloseButton,
   Drawer,
   Portal,
   Dialog,
 } from "@chakra-ui/react";
+import { Table } from "@/common/Table";
 import Editor, { DiffEditor, useMonaco, loader } from "@monaco-editor/react";
 import { useRef } from "react";
 
 export default function ClusterList() {
   return (
-    <Table.Root size="sm" variant="outline" className="table-root">
+    <Table.Root>
       <Table.Header>
         <Table.Row>
-          <Table.ColumnHeader className="table-column-header">
-            Name
-          </Table.ColumnHeader>
-          <Table.ColumnHeader className="table-column-header">
-            Kubernetes Version
-          </Table.ColumnHeader>
-          <Table.ColumnHeader className="table-column-header">
-            Cluster Status
-          </Table.ColumnHeader>
-          <Table.ColumnHeader className="table-column-header">
-            Node Status
-          </Table.ColumnHeader>
-          <Table.ColumnHeader className="table-column-header">
-            CPU Usage
-          </Table.ColumnHeader>
-          <Table.ColumnHeader className="table-column-header">
-            Memory Usage
-          </Table.ColumnHeader>
-          <Table.ColumnHeader className="table-column-header">
-            Operation
-          </Table.ColumnHeader>
+          <Table.ColumnHeader>Name</Table.ColumnHeader>
+          <Table.ColumnHeader>Kubernetes Version</Table.ColumnHeader>
+          <Table.ColumnHeader>Cluster Status</Table.ColumnHeader>
+          <Table.ColumnHeader>Node Status</Table.ColumnHeader>
+          <Table.ColumnHeader>CPU Usage</Table.ColumnHeader>
+          <Table.ColumnHeader>Memory Usage</Table.ColumnHeader>
+          <Table.ColumnHeader>Operation</Table.ColumnHeader>
         </Table.Row>
       </Table.Header>
       <Table.Body>
         {items.map((item) => (
           <Table.Row key={item.id}>
-            <Table.Cell className="table-cell">{item.name}</Table.Cell>
-            <Table.Cell className="table-cell">{item.version}</Table.Cell>
-            <Table.Cell className="table-cell">
+            <Table.Cell>{item.name}</Table.Cell>
+            <Table.Cell>{item.version}</Table.Cell>
+            <Table.Cell>
               <Flex gap="2" justify="center">
                 <Status.Root colorPalette="green">
                   <Status.Indicator />
-                </Status.Root>
-                <Text textStyle="sm" className="status-text">
                   {item.status}
-                </Text>
+                </Status.Root>
               </Flex>
             </Table.Cell>
-            <Table.Cell className="table-cell">{item.nodestatus}</Table.Cell>
-            <Table.Cell className="table-cell">{item.cpuusage}</Table.Cell>
-            <Table.Cell className="table-cell">{item.memoryusage}</Table.Cell>
-            <Table.Cell className="table-cell">
+            <Table.Cell>{item.nodestatus}</Table.Cell>
+            <Table.Cell>{item.cpuusage}</Table.Cell>
+            <Table.Cell>{item.memoryusage}</Table.Cell>
+            <Table.Cell>
               <Flex justify="space-evenly">
                 <Drawer.Root size="xl">
                   <Drawer.Trigger asChild>

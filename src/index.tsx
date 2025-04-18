@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { Provider } from "./components/ui/provider";
+import { Provider } from "./common/ui/provider";
 
 // keycloak에서 토큰 가져오는 로직 추가해야함
 
